@@ -1,36 +1,46 @@
-# Cookie Crunch
+# L3Miage Shell
 
-Welcome to Cookie Crunch, a Match-3 game where the goal is to align identical cookies to score points.
+Le L3Miage Shell est un interpréteur de commandes simple basé sur C. Il offre des fonctionnalités de base pour la saisie, l'analyse et l'exécution de commandes système. En outre, il permet de gérer une variable d'environnement spéciale appelée FORBIDDEN, qui peut être utilisée pour interdire l'exécution de certaines commandes.
 
-## Installation
+## Fonctionnalités
 
-1. Clone the repository: `git clone https://github.com/dijaben123/Candy crush.git`
-2. Open the `index.html` file in your preferred browser.
+- Saisie de commandes utilisateur.
+- Analyse des commandes en mots-clés (tokens).
+- Exécution des commandes système.
+- Gestion de la variable d'environnement FORBIDDEN pour interdire certaines commandes.
 
-## How to Play
+## Compilation
 
-- The objective of the game is to achieve the highest score possible by aligning cookies.
-- Click on a cookie to select it.
-- Click on another adjacent cookie to swap them and create alignments.
-- Drag cookies to swap them.
+Pour compiler le L3Miage Shell, vous pouvez utiliser la commande suivante :
 
-## Features
+```shell
+gcc l3miage_shell.c -o l3miage_shell
+Assurez-vous que vous avez un compilateur GCC installé sur votre système:
+`-Utilisation :`
+    Exécutez le L3Miage Shell en utilisant la commande ./l3miage_shell.
+    ```schell 
 
-- **Alignments:** Score points by aligning at least three cookies of the same type horizontally or vertically.
-- **Incremental Scoring:** The score increases based on the length of alignments. The longer the alignment, the higher the score.
-- **Chain Falling Sequences:** If a new alignment is created after an initial sequence of falls, the score is multiplied.
+    Vous pouvez saisir des commandes système comme vous le feriez avec un terminal normal.
 
-## Code Structure
+    Le shell prend en charge les commandes spéciales newf et rmf pour gérer la variable FORBIDDEN. Exemple :
+        newf <keyword> : Ajoute un mot-clé à la variable FORBIDDEN.
+        rmf <keyword> : Supprime un mot-clé de la variable FORBIDDEN.
 
-- `index.html`: Main HTML file.
-- `main.js`: Main game logic.
-- `cookie.js`: Definition of the Cookie class.
-- `utils.js`: Utility functions.
+    Le shell gère également la commande exit pour quitter le programme.
 
-## Development
+-Gestion de la variable FORBIDDEN
 
-- The code is written in JavaScript and utilizes modern language features.
-- The grid is generated with random cookies at the beginning of the game.
-- The code is commented to facilitate understanding and extension of the game.
+La variable d environnement FORBIDDEN est utilisée pour interdire l exécution de certaines commandes système. Vous pouvez ajouter des mots-clés à cette variable avec newf et les supprimer avec rmf.
 
-Enjoy playing Cookie Crunch! [Play Now](https://dijaben123.github.io/candy_crash2/)
+Exemple d utilisation :
+newf rm
+Cette commande ajoutera le mot-clé "rm" à la variable FORBIDDEN. Toute tentative d exécution de la commande "rm" entraînera un avertissement.
+Remarques:
+
+Ce projet est destiné à des fins éducatives et est un interpréteur de commandes minimaliste. Il ne possède pas toutes les fonctionnalités d un shell complet comme Bash. Vous êtes invités à l améliorer et à l adapter selon vos besoins.
+
+Assurez-vous d inclure les détails spécifiques de votre projet, tels que le nom du fichier source (l3miage_shell.c) et le nom de l exécutable (l3miage_shell), ainsi que tout autre détail ou instruction pertinent pour les utilisateurs.
+
+N hésitez pas à personnaliser ce README en fonction de vos besoins spécifiques et des détails de votre projet.
+
+Cela devrait inclure la demande de saisir "exit" pour quitter le shell au lieu d'utiliser Ctrl+C.
